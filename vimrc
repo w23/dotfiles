@@ -5,28 +5,31 @@ call plug#begin('~/.vim/plugged')
 "Plug 'L9'
 "Plug 'rking/ag.vim'
 "Plug 'scrooloose/nerdtree'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'jreybert/vimagit'
-Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'sickill/vim-monokai'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'vim-syntastic/syntastic'
 Plug 'wikitopian/hardmode'
 call plug#end()
 
+set nocompatible
 syntax on
 filetype plugin indent on
 
@@ -49,12 +52,13 @@ set background=dark
 "colorscheme zenburn
 "colorscheme molokai
 "let g:seoul256_background = 236
+let g:seoul256_background = 234
 colo seoul256
 
 " enable Normal mode keys in ru layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+set cscopequickfix=g-,s-,c-,d-,i-,t-,e-,a-
 
 " Highlight extra whitespaces at the end
 highlight ExtraWhitespace ctermbg=red guibg=red
