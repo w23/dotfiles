@@ -42,6 +42,11 @@ au BufRead,BufNewFile *.txt,*.md set tw=0 wm=0
 
 set incsearch
 set number relativenumber
+
+" bash-like TAB completion
+set wildmode=longest,list
+
+" Navigate through completion variants using ← and →
 set wildmenu
 
 set background=dark
