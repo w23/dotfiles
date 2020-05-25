@@ -63,7 +63,12 @@ colo seoul256
 " enable Normal mode keys in ru layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+" cscope
+set cscopeverbose
 set cscopequickfix=g-,s-,c-,d-,i-,t-,e-,a-
+" enable using scope as tags
+set cscopetag
+
 
 " Highlight extra whitespaces at the end
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -93,6 +98,7 @@ let g:airline_section_y = ''
 "let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
 "let g:ctrlp_match_func = { 'match': 'GoodMatch' }
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:ctrlp_extensions = ['tag']
 
 " hardmode
 let g:HardMode_level = 'wannabe'
