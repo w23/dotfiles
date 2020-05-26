@@ -36,7 +36,7 @@ filetype plugin indent on
 " indentation
 "set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set tabstop=2 shiftwidth=2 noexpandtab smarttab
-set so=8
+set scrolloff=8
 set tw=0 wm=0
 au BufRead,BufNewFile *.txt,*.md set tw=0 wm=0
 
@@ -127,6 +127,7 @@ set statusline+=%f
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_loc_list_height = 2
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -155,3 +156,7 @@ nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 let g:airline_highlighting_cache=1
 set ttyfast
 set lazyredraw
+
+" Rust
+" PLS JUST NO
+let g:rust_recommended_style=0
