@@ -145,6 +145,11 @@ nmap <F8> :TagbarToggle<CR>
 "nnoremap pd :YcmCompleter GoToDefinition
 "nnoremap pc :YcmCompleter GoToDeclaration
 let g:ycm_auto_trigger = 0
+nnoremap <F5> :YcmRestartServer<CR>
+nnoremap <leader>jj :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 
 " S P E E D
 let g:airline_highlighting_cache=1
