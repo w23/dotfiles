@@ -159,4 +159,5 @@ set lazyredraw
 
 " Rust
 " PLS JUST NO
-let g:rust_recommended_style=0
+let g:rust_recommended_style = 0
+let g:rustfmt_autosave = 1
