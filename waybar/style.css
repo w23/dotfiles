@@ -120,3 +120,6 @@ window#waybar {
 #tray {
 }
 
+#temperature.critical {
+	color: rgb(254, 180, 60);
+}

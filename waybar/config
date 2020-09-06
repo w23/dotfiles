@@ -12,6 +12,7 @@
 		"custom/disk_home",
 		"custom/disk_root",
 		"temperature",
+		"temperature#gpu",
 		"cpu",
 		"memory",
 		"network",
@@ -57,12 +58,22 @@
 	},
 
 	"temperature": {
-		"thermal-zone": 4,
-		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		//"thermal-zone": 4,
+		"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C {icon} 🖥️",
+		//"format": "<span color='#e88939'>{icon}</span> {temperatureC}°C",
+		"format": "🖥️ {temperatureC}°C",
+		//"format-icons": ["", "", ""]
+	},
+
+	"temperature#gpu": {
+		"hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
+		"critical-threshold": 80,
+		"format": "📺 {temperatureC}°C",
 		// "format-critical": "{temperatureC}°C {icon}",
-		"format": "<span color='#e88939'>{icon}</span> {temperatureC}°C",
-		"format-icons": ["", "", ""]
+		//"format": "<span color='#e88939'>{icon}</span> {temperatureC}°C",
+		//"format-icons": ["", "", ""]
 	},
 
 	"cpu": {
@@ -77,7 +88,7 @@
 
 	"network": {
 		"format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB ({signalStrength}%)</span> {ipaddr}/{cidr} <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
-		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr}  <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "Disconnected ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
