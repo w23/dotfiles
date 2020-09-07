@@ -87,8 +87,8 @@
 
 
 	"network": {
-		"format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB ({signalStrength}%)</span> {ipaddr}/{cidr} <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
-		"format-ethernet": "{ifname}: {ipaddr}/{cidr}  <span color='#589df6'>⇵</span> {bandwidthUpBits}/{bandwidthDownBits}",
+		"format-wifi": "<span color='#589df6'></span> <span color='gray'>{essid}</span> {frequency} <span color='#589df6'>{signaldBm} dB ({signalStrength}%)</span> {ipaddr}/{cidr} <span color='#589df6'>⬆</span>{bandwidthUpBits:8} <span color='#589df6'>⬇</span>{bandwidthDownBits:8}",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr}  <span color='#589df6'>⬆</span>{bandwidthUpBits:8} <span color='#589df6'>⬇</span>{bandwidthDownBits:8}",
 		"format-linked": "{ifname} (No IP) ",
 		"format-disconnected": "Disconnected ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
