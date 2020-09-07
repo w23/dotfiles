@@ -136,6 +136,10 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 "let g:syntastic_error_symbol = "E"
 "let g:syntastic_warning_symbol = "W"
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["c", "cpp", "cc"],
+    \ "passive_filetypes": ["rust"] }
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -161,3 +165,7 @@ set lazyredraw
 " PLS JUST NO
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 1
+
+" rust-ctags
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
