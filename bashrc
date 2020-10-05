@@ -1,15 +1,11 @@
-if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
-fi
-
-. /etc/profile
-
 PATH=~/.local/bin:$PATH
 
+export EDITOR=vim
 export HISTSIZE=4096
 export HISTCONTROL=ignoreboth
 
-alias l="ls -lA"
+alias l="exa -l"
+alias rm='rm -i'
+alias mv='mv -i'
 
 set -o vi
