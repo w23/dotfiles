@@ -27,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'vim-syntastic/syntastic'
 Plug 'wikitopian/hardmode'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set nocompatible
@@ -169,3 +170,6 @@ let g:rustfmt_autosave = 1
 " rust-ctags
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
+" CoC
+inoremap <silent><expr> <c-space> coc#refresh()
