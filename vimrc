@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/nerdtree'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
@@ -150,12 +150,12 @@ nmap <F8> :TagbarToggle<CR>
 "nnoremap pg :YcmCompleter GoToDefinitionElseDeclaration
 "nnoremap pd :YcmCompleter GoToDefinition
 "nnoremap pc :YcmCompleter GoToDeclaration
-let g:ycm_auto_trigger = 0
-nnoremap <F5> :YcmRestartServer<CR>
-nnoremap <leader>jj :YcmCompleter GoTo<CR>
-nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
-nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+" let g:ycm_auto_trigger = 0
+" nnoremap <F5> :YcmRestartServer<CR>
+" nnoremap <leader>jj :YcmCompleter GoTo<CR>
+" nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+" nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 
 " S P E E D
 let g:airline_highlighting_cache=1
@@ -173,3 +173,14 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 
 " CoC
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
