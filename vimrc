@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'FelikZ/ctrlp-py-matcher'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+"Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -25,7 +25,7 @@ Plug 'sickill/vim-monokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'wikitopian/hardmode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -87,18 +87,18 @@ endif
 "	copen
 "endif
 
-" vim-airline
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_b = ''
-let g:airline_section_x = ''
-let g:airline_section_y = ''
+" " vim-airline
+" let g:airline_powerline_fonts = 0
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_section_b = ''
+" let g:airline_section_x = ''
+" let g:airline_section_y = ''
 
 " CtrlP matcher
 "let g:path_to_matcher = ~/src/matcher/matcher
 "let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
 "let g:ctrlp_match_func = { 'match': 'GoodMatch' }
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+"let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_extensions = ['tag']
 
 " hardmode
@@ -124,23 +124,23 @@ let g:indent_guides_enable_on_vim_startup = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
 " Syntastic
-set statusline+=%f
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_loc_list_height = 2
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-"let g:syntastic_error_symbol = "E"
-"let g:syntastic_warning_symbol = "W"
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["c", "cpp", "cc"],
-    \ "passive_filetypes": ["rust"] }
+" set statusline+=%f
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_loc_list_height = 2
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_error_symbol = "✗"
+" let g:syntastic_warning_symbol = "⚠"
+" "let g:syntastic_error_symbol = "E"
+" "let g:syntastic_warning_symbol = "W"
+" let g:syntastic_mode_map = {
+"     \ "mode": "active",
+"     \ "active_filetypes": ["c", "cpp", "cc"],
+"     \ "passive_filetypes": ["rust"] }
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -172,6 +172,7 @@ autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " CoC
+" set tagfunc=CocTagFunc
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -184,3 +185,4 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
