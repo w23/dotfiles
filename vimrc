@@ -25,6 +25,7 @@ Plug 'sickill/vim-monokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 " Plug 'vim-syntastic/syntastic'
 Plug 'wikitopian/hardmode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -41,7 +42,7 @@ set scrolloff=8
 set tw=0 wm=0
 au BufRead,BufNewFile *.txt,*.md set tw=0 wm=0
 
-set incsearch
+set incsearch hlsearch showmatch
 set number relativenumber
 
 " bash-like TAB completion
@@ -49,6 +50,16 @@ set wildmode=longest,list
 
 " Navigate through completion variants using ← and →
 set wildmenu
+
+" Case insensitive search if all lowercase
+set ignorecase smartcase
+
+" Apply rename to all matches in line
+set gdefault
+
+" Show unprintable chars
+set list
+set listchars=tab:▸\ ,eol:¬
 
 set background=dark
 "colorscheme default
@@ -104,7 +115,6 @@ let g:ctrlp_extensions = ['tag']
 " hardmode
 let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 " indent-guides
 "let g:indent_guides_auto_colors = 1
