@@ -59,7 +59,7 @@ set gdefault
 
 " Show unprintable chars
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▹\ ,eol:¬
 
 set background=dark
 "colorscheme default
