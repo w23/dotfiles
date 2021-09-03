@@ -6,10 +6,13 @@ call plug#begin('~/.vim/plugged')
 "Plug 'rking/ag.vim'
 "Plug 'scrooloose/nerdtree'
 "Plug 'vim-airline/vim-airline-themes'
-Plug 'FelikZ/ctrlp-py-matcher'
 "Plug 'Valloric/YouCompleteMe'
-Plug 'airblade/vim-gitgutter'
 "Plug 'bling/vim-airline'
+"Plug 'vim-syntastic/syntastic'
+" only break things for terminal Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -26,7 +29,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-" Plug 'vim-syntastic/syntastic'
 Plug 'wikitopian/hardmode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
@@ -59,18 +61,17 @@ set gdefault
 
 " Show unprintable chars
 set list
-set listchars=tab:▹\ ,eol:¬
+"set listchars=tab:▹\ ,eol:¬
+set listchars=tab:→\ ,eol:¬
 
 set background=dark
 "colorscheme default
-" colorscheme railscasts
-"set background=dark
+"colorscheme railscasts
 "colorscheme solarized
 "colorscheme zenburn
 "colorscheme molokai
-"let g:seoul256_background = 236
-let g:seoul256_background = 234
-colo seoul256
+"colorscheme seoul256
+"not needed for terminal colorscheme dracula
 
 " enable Normal mode keys in ru layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -117,55 +118,17 @@ let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " indent-guides
-"let g:indent_guides_auto_colors = 1
-hi IndentGuidesOdd  guibg=#3B3B3B ctermbg=235
-hi IndentGuidesEven guibg=#343434 ctermbg=236
+let g:indent_guides_auto_colors = 0
 let g:indent_guides_space_guides = 1
 let g:indent_guides_enable_on_vim_startup = 1
-"hi IndentGuidesOdd  ctermbg=black
-"hi IndentGuidesEven ctermbg=darkgrey
+hi IndentGuidesOdd  guibg=#282a36 ctermbg=235
+hi IndentGuidesEven guibg=#383a46 ctermbg=236
 
 " GLSL syntax
 " autocmd BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.cs,*.vert,*.frag,*.geom,*.tess,*.shd,*.gls,*.glsl set ft=glsl440
 
-" solarized hack
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-
-" Syntastic
-" set statusline+=%f
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_loc_list_height = 2
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_error_symbol = "✗"
-" let g:syntastic_warning_symbol = "⚠"
-" "let g:syntastic_error_symbol = "E"
-" "let g:syntastic_warning_symbol = "W"
-" let g:syntastic_mode_map = {
-"     \ "mode": "active",
-"     \ "active_filetypes": ["c", "cpp", "cc"],
-"     \ "passive_filetypes": ["rust"] }
-
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" YouCompleteMe
-"nnoremap y :YcmForceCompileAndDiagnostics
-"nnoremap pg :YcmCompleter GoToDefinitionElseDeclaration
-"nnoremap pd :YcmCompleter GoToDefinition
-"nnoremap pc :YcmCompleter GoToDeclaration
-" let g:ycm_auto_trigger = 0
-" nnoremap <F5> :YcmRestartServer<CR>
-" nnoremap <leader>jj :YcmCompleter GoTo<CR>
-" nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
-" nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
-" nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 
 " S P E E D
 let g:airline_highlighting_cache=1
