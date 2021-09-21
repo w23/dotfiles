@@ -11,10 +11,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'vim-syntastic/syntastic'
 " only break things for terminal Plug 'dracula/vim', { 'as': 'dracula' }
 
-Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
 Plug 'jaxbot/semantic-highlight.vim'
@@ -31,6 +29,10 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'wikitopian/hardmode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'editorconfig/editorconfig-vim'
+Plug 'AndrewRadev/linediff.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set nocompatible
@@ -106,13 +108,6 @@ endif
 " let g:airline_section_x = ''
 " let g:airline_section_y = ''
 
-" CtrlP matcher
-"let g:path_to_matcher = ~/src/matcher/matcher
-"let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
-"let g:ctrlp_match_func = { 'match': 'GoodMatch' }
-"let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_extensions = ['tag']
-
 " hardmode
 let g:HardMode_level = 'wannabe'
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -159,3 +154,5 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" FZF
+nmap <C-P> :FZF<CR>
