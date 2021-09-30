@@ -81,10 +81,25 @@ set background=dark
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " cscope
-set cscopeverbose
 set cscopequickfix=g-,s-,c-,d-,i-,t-,e-,a-
 " enable using scope as tags
 set cscopetag
+set nocscopeverbose
+if filereadable("cscope.out")
+    cs add cscope.out
+endif
+set cscopeverbose
+command CR execute 'silent !time cscope -bRq' | redraw! | cs reset
+map g<C-]> :lcs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>s :lcs find s <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>g :lcs find g <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>c :lcs find c <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>t :lcs find t <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>e :lcs find e <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>f :lcs find f <C-R>=expand("<cfile>")<CR><CR>:lopen<CR>
+nmap <C-\>i :lcs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:lopen<CR>
+nmap <C-\>d :lcs find d <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
+nmap <C-\>a :lcs find a <C-R>=expand("<cword>")<CR><CR>:lopen<CR>
 
 
 " Highlight extra whitespaces at the end
