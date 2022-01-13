@@ -137,7 +137,7 @@ hi IndentGuidesOdd  guibg=#282a36 ctermbg=235
 hi IndentGuidesEven guibg=#383a46 ctermbg=236
 
 " GLSL syntax
-" autocmd BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.cs,*.vert,*.frag,*.geom,*.tess,*.shd,*.gls,*.glsl set ft=glsl440
+autocmd BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.cs,*.vert,*.frag,*.geom,*.tess,*.shd,*.gls,*.glsl,*.rgen,*.comp,*.rchit,*.rahit,*.rmiss set ft=glsl440
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
