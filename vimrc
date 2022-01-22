@@ -141,6 +141,24 @@ autocmd BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.cs,*.vert
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_sort = 0
+let g:tagbar_type_glsl440 = {
+    \ 'ctagstype' : 'c',
+    \ 'kinds' : [
+        \ 'h:header files:1:0',
+        \ 'd:macros:1:0',
+        \ 'p:prototypes:1:0',
+        \ 'g:enums',
+        \ 'e:enumerators:0:0',
+        \ 't:typedefs:0:0',
+        \ 's:structs',
+        \ 'u:unions',
+        \ 'm:members:0:0',
+        \ 'v:variables:0:0',
+        \ 'f:functions',
+        \ '?:unknown',
+    \ ],
+\ }
 
 " S P E E D
 let g:airline_highlighting_cache=1
