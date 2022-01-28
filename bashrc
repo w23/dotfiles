@@ -9,4 +9,8 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias diffc='diff --color=always'
 
-set -o vi
+source /usr/share/bash-completion/completions/fzf
+source /usr/share/fzf/key-bindings.bash
+
+# meh
+# set -o vi
