@@ -33,6 +33,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'AndrewRadev/linediff.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set nocompatible
@@ -76,6 +77,9 @@ set background=dark
 "colorscheme molokai
 "colorscheme seoul256
 "not needed for terminal colorscheme dracula
+
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " enable Normal mode keys in ru layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
