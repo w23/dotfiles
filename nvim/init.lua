@@ -26,6 +26,8 @@ vim.opt.listchars = {tab = '⁞ ', eol = '¬', trail = '·'}
 -- Also work under ru
 vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
 
+vim.opt.colorcolumn = "120"
+
 -- Install lazy.nvim as plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -42,6 +44,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins using lazy
 require('lazy').setup({
+	{
+		'tpope/vim-commentary',
+	},
 	{
 		'morhetz/gruvbox',
 		lazy = false,
