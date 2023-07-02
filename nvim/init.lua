@@ -44,9 +44,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins using lazy
 require('lazy').setup({
-	{
-		'tpope/vim-commentary',
-	},
+	{ 'tpope/vim-commentary', },
+	{ 'tpope/vim-fugitive', },
 	{
 		'morhetz/gruvbox',
 		lazy = false,
