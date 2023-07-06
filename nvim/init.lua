@@ -256,3 +256,29 @@ require('lazy').setup({
 		end,
 	}
 })
+
+vim.filetype.add({
+	extension = {
+		vp = 'glsl',
+		fp = 'glsl',
+		gp = 'glsl',
+		vs = 'glsl',
+		fs = 'glsl',
+		gs = 'glsl',
+		tcs = 'glsl',
+		tes = 'glsl',
+		cs = 'glsl',
+		vert = 'glsl',
+		frag = 'glsl',
+		geom = 'glsl',
+		tess = 'glsl',
+		shd = 'glsl',
+		gls = 'glsl',
+		glsl = 'glsl',
+		rgen = 'glsl',
+		comp = 'glsl',
+		rchit = 'glsl',
+		rahit = 'glsl',
+		rmiss = 'glsl',
+	}
+})
