@@ -46,6 +46,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	{ 'tpope/vim-commentary', },
 	{ 'tpope/vim-fugitive', },
+	{ 'sheerun/vim-polyglot',
+		init = function()
+			-- vim-polyglot confusingly registers *.comp both for perl and for glsl
+			vim.api.nvim_set_var('polyglot_disabled', {'perl'})
+		end,
+	},
 	{
 		'morhetz/gruvbox',
 		lazy = false,
