@@ -175,6 +175,7 @@ require('lazy').setup({
 			'hrsh7th/cmp-cmdline',
 			'hrsh7th/cmp-vsnip',
 			'hrsh7th/vim-vsnip',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
 		},
 		config = function()
 			local cmp = require'cmp'
@@ -207,6 +208,7 @@ require('lazy').setup({
 					-- { name = 'snippy' }, -- For snippy users.
 				}, {
 					{ name = 'buffer' },
+					{ name = 'nvim_lsp_signature_help' },
 				})
 			})
 
