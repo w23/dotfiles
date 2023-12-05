@@ -28,6 +28,8 @@ vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGH
 
 vim.opt.colorcolumn = "120"
 
+--vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true, silent = true })
+
 -- Install lazy.nvim as plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -74,7 +76,7 @@ require('lazy').setup({
 		build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 	},
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			local telescope = require('telescope')
