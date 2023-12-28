@@ -46,6 +46,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local on_lsp_attach = function(client, bufnr)
+	if client.server_capabilities.documentSymbolProvider then
+		navic = require('nvim-navic')
+		navic.attach(client, bufnr)
+	end
+end
+
+vim.o.statusline = "%<%f:%l, %c%V %h%w%m%r %{%v:lua.require'nvim-navic'.get_location()%}%=%-14.(%) %P"
+
 -- Install plugins using lazy
 require('lazy').setup({
 	{ 'tpope/vim-commentary', },
@@ -118,16 +127,25 @@ require('lazy').setup({
 		end
 	},
 	{
+		'SmiteshP/nvim-navic',
+		dependencies = {
+			'neovim/nvim-lspconfig',
+		},
+	},
+	{
 		'neovim/nvim-lspconfig',
 		config = function()
 			-- Setup language servers.
 			local lspconfig = require('lspconfig')
-			lspconfig.clangd.setup {}
+			lspconfig.clangd.setup {
+				on_attach = on_lsp_attach,
+			}
 			lspconfig.rust_analyzer.setup {
 				-- Server-specific settings. See `:help lspconfig-setup`
 				settings = {
 					['rust-analyzer'] = {},
 				},
+				on_attach = on_lsp_attach,
 			}
 
 			-- Global mappings.
