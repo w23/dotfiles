@@ -23,6 +23,10 @@ vim.opt.gdefault = true
 vim.opt.list = true
 vim.opt.listchars = {tab = '⁞ ', eol = '¬', trail = '·'}
 
+-- Autocompletion
+vim.opt.wildmode = 'longest,list'
+vim.opt.wildmenu = true
+
 -- Also work under ru
 vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
 
