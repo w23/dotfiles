@@ -1,4 +1,4 @@
-PATH=~/.local/bin:$PATH
+PATH=~/.local/bin:~/.cargo/bin:$PATH
 
 export EDITOR=vim
 export HISTSIZE=4096
