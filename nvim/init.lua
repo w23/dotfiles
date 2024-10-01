@@ -32,6 +32,8 @@ vim.opt.langmap = 'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGH
 
 vim.opt.colorcolumn = "120"
 
+vim.opt.mouse = ""
+
 vim.lsp.set_log_level('off')
 
 --vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true, silent = true })
