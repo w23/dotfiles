@@ -17,6 +17,8 @@ window#waybar {
 #window {
 	color: #e4e4e4;
 	font-weight: bold;
+	margin-top: -50px;
+	margin-bottom: -50px;
 }
 
 #workspaces {
