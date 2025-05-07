@@ -1,0 +1,10 @@
+[user]
+	email = me@provod.works
+	name = Ivan Avdeev
+[push]
+	default = current
+	recurseSubmodules = on-demand
+[credential]
+	helper = libsecret
+[submodule]
+	recurse = true
